@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Chat</title>
+
+    <script src="https://localhost:8080/socket.io/socket.io.js"></script>
+
+    <!-- <script src="https://chriscalver.com:8080/socket.io/socket.io.js"></script> -->
+    <!-- <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script> -->
+    <script>
+      const socket = io("https://localhost:8080");
+    //   const socket = io("https://chriscalver.com:8080");
+
+      socket.on("message", (data) => {
+        console.log(data);
+      });
+      socket.emit("message", "Hello from client!");
+    </script>
+  </head>
+  <body>
+    <h1>Socket.IO Chat</h1>
+  </body>
+</html>
